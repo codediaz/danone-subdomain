@@ -1,4 +1,5 @@
 import './globals.css'
+import { Footer, Navbar } from '@/components'
 
 export const metadata = {
   title: 'Danone | Hackathon',
@@ -12,7 +13,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="relative">{children}</body>
+      <body className="relative">
+        <Navbar/>
+        {children}
+        <Footer/>
+        </body>
     </html>
   )
 }

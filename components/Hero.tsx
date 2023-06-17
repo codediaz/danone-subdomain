@@ -9,7 +9,7 @@ const Hero = () => {
     }
   return (
     <div className='hero'>
-        <div className='flex-1 pt-336 padding-x'>
+        <div  className="flex-1 pt-36 padding-x">
             <h1 className='hero__title'>
             Los productos más ecológicos y saludables
             </h1>
@@ -31,7 +31,7 @@ const Hero = () => {
                 className="object-contain"/>
             </div>
             <div className='hero__image-overlay'>
-                
+
             </div>
         </div>
     </div>
