@@ -1,6 +1,6 @@
 "use client";
 
-import { CustomFilter, Hero, SearchBar } from '@/components'
+import { CardProduct, CustomFilter, Hero, SearchBar } from '@/components'
 import Image from 'next/image'
 import { useEffect, useState } from 'react';
 import { request, gql } from 'graphql-request';
@@ -26,12 +26,12 @@ export default function Home() {
         description
         ingredients
         coverImage {
-          id
+          url
         }
         productData
         ean
         nutriScore {
-          id
+          url
         }
       }
     }
@@ -40,12 +40,16 @@ export default function Home() {
     try {
       const data = await request(process.env.HYGRAPH_API_URL, query);
       setProducts(data.products);
+
     } catch (error) {
       console.error('Error fetching data:', error);
     }
   }
 
+  const isProductsEmpty = !Array.isArray(products) || products.length < 1 || !products;
+
   return (
+    
     <main className="overflow-hidden">
      <Hero/>
 
@@ -63,6 +67,20 @@ export default function Home() {
         <CustomFilter  title = "fuel"/>
       </div>  
       </div>
+
+      {!isProductsEmpty ? (
+      <section>
+       <div className='home__products-wrapper'>
+            {products?.map((product => (
+              <CardProduct product = {product}/>
+            )))}
+       </div>
+      </section>
+      ): (
+        <div className='home__error-container'>
+          <h2 className='text-black font-bold text-xl'>Oops, no results</h2>
+        </div>
+      )}
 
 
       <div>
