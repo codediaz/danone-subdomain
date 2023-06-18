@@ -10,6 +10,8 @@ interface ProductCardProps{
 }
 
 const CardProduct = ({product} : ProductProps) => {
+
+    const [isOpen, setIsOpen] = useState(false);
     
     const {
             title,
@@ -43,7 +45,18 @@ const CardProduct = ({product} : ProductProps) => {
                 priority
                 className='object-contain'/>
         </div>
-        
+
+        <div className='relative flex w-full mt-2'>
+        <div className="product-card__btn-container">  
+          <CustomButton
+            title='Más detalles'
+            containerStyles='w-full py-[16px] rounded-full bg-primary-blue'
+            textStyles='text-white text-[14px] leading-[17px] font-bold'
+            rightIcon='/right-arrow.svg'
+            handleClick={() => setIsOpen(true)}
+          />
+            </div>
+        </div>
     </div>
   )
 }
