@@ -4,6 +4,7 @@ import CustomFilter from "./CustomFilter";
 import Footer from "./Footer";
 import Hero from "./Hero";
 import Navbar from "./Navbar";
+import ProductDetail from "./ProductDetail";
 import SearchBar from "./SearchBar";
 import SearchMenufacture from "./SearchMenufacture";
 
@@ -16,4 +17,5 @@ export{
     CustomFilter,
     SearchMenufacture,
     CardProduct,
+    ProductDetail,
 }

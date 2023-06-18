@@ -30,6 +30,7 @@ export default function Home() {
         }
         productData
         ean
+        price
         nutriScore {
           url
         }
@@ -81,19 +82,6 @@ export default function Home() {
           <h2 className='text-black font-bold text-xl'>Oops, no results</h2>
         </div>
       )}
-
-
-      <div>
-      <h1>Products</h1>
-      <ul>
-        {products.map((product) => (
-          <li key={product.title}>
-            <h2>{product.title}</h2>
-          </li>
-        ))}
-      </ul>
-    </div>
-
      </div>
     </main>
   )

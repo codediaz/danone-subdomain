@@ -28,5 +28,6 @@ export interface ProductProps {
     coverImage?: Object
     productData?: string;
     ean?: string;
+    price?: string;
     nutriScore ?: Object
 }
