@@ -9,7 +9,6 @@ const SearchMenufacture = ({manufacturer, setManufacturer}: SearchMenufacturePro
   const [query, setQuery] = useState('');
   
 
-
   return (
     <div className="search-manufacturer">
         <Combobox>

@@ -4,10 +4,12 @@ import { CardProduct, CustomFilter, Hero, SearchBar } from '@/components'
 import Image from 'next/image'
 import { useEffect, useState } from 'react';
 import { request, gql } from 'graphql-request';
+import { HomeProps } from '@/Types';
 
 
-export default function Home() {
+export default function Home({ searchParams }: HomeProps) {
   const [products, setProducts] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState([]);
 
   useEffect(() => {
     fetchData();
@@ -41,13 +43,30 @@ export default function Home() {
     try {
       const data = await request(process.env.HYGRAPH_API_URL, query);
       setProducts(data.products);
+      setFilteredProducts(data.products); 
 
     } catch (error) {
       console.error('Error fetching data:', error);
     }
   }
 
-  const isProductsEmpty = !Array.isArray(products) || products.length < 1 || !products;
+  const isProductsEmpty =
+  !Array.isArray(filteredProducts) ||
+  filteredProducts.length < 1 ||
+  !filteredProducts;
+
+  const handleSearch = (searchQuery) => {
+    if (searchQuery === null) {
+      setFilteredProducts(products);
+      window.history.replaceState({}, document.title, window.location.pathname);
+    } else {
+      const filtered = products.filter((product) =>
+        product.title.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+      setFilteredProducts(filtered);
+    }
+  };
+  
 
   return (
     
@@ -63,16 +82,16 @@ export default function Home() {
       </div>
 
       <div className='home__filters'>
-        <SearchBar/>
+        <SearchBar onSearch={handleSearch}/>
       <div className='home__filter-container'>
-        <CustomFilter  title = "fuel"/>
+  
       </div>  
       </div>
 
       {!isProductsEmpty ? (
       <section>
        <div className='home__products-wrapper'>
-            {products?.map((product => (
+            {filteredProducts?.map((product => (
               <CardProduct product = {product}/>
             )))}
        </div>
