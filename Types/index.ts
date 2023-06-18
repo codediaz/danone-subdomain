@@ -11,6 +11,14 @@ export interface CustomButtonProps {
     btnType?: "button" | "submit";
 }
 
+export interface FilterProps {
+    title?: string;
+  }
+
+export interface HomeProps {
+    searchParams: FilterProps;
+  }
+
 export interface SearchMenufactureProps {
     manufacturer: string;
     setManufacturer: (manufacturer: string) => void;
