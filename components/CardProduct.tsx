@@ -84,7 +84,7 @@ const CardProduct = ({product} : ProductCardProps) => {
 
         <div className="product-card__btn-container">
           <CustomButton
-            title='View More'
+            title='Ver detalles'
             containerStyles='w-full py-[16px] rounded-full bg-primary-blue'
             textStyles='text-white text-[14px] leading-[17px] font-bold'
             rightIcon='/right-arrow.svg'
