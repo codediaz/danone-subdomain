@@ -84,7 +84,7 @@ export default function Home({ searchParams }: HomeProps) {
       <div className='home__filters'>
         <SearchBar onSearch={handleSearch}/>
       <div className='home__filter-container'>
-        <CustomFilter  title = "fuel"/>
+  
       </div>  
       </div>
 
