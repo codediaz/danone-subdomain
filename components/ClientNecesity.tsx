@@ -42,7 +42,7 @@ return (
         <div className="flex items-center justify-between mb-8">
           <div>
             <h2 className="text-3xl font-bold mb-4">¡Descubre cómo un consumo limitado de calorías diarias puede transformar tu salud!</h2>
-            <p className="text-gray-700 mr-5">
+            <p className="text-gray-700 text-justify mr-[80px] ">
             Controla tu ingesta de alimentos y nutre tu cuerpo sin excederte en calorías. Pierde peso gradualmente, reduce el riesgo de enfermedades y mejora tu bienestar. Regístrate para recibir asesoramiento nutricional gratuito y transforma tu vida hacia una mayor salud.
             </p>
           </div>
