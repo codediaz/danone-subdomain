@@ -1,15 +1,15 @@
 
-# Danone Hackathon
+# 🔭 Danone Hackathon
 
-## Background del proyecto
+## 🌱 Background del proyecto
 
 El proyecto tiene como objetivo principal adaptar un aplicativo web para mostrar a los usuarios los productos más ecológicos que ofrece Danone. Además, se brinda un formulario de contacto para que los usuarios interesados puedan comunicarse de inmediato. El proyecto se centra en promover la adopción de un plan de consumo limitado de calorías para mejorar la salud de los usuarios.
 
-## Uso
+## 📫 Uso
 
-Para la utilización del aplicativo no será necesario logearse,  podrás recorrer la página y observar los productos ecológicos que posee Danone además de poder buscar si sabes el nombre de alguno, y si te interesa el plan de consumo limitado de calorías podrás enviar información para que se pongan en contacto contigo.
+Para la utilización del aplicativo no será necesario logearse,  podrás recorrer la página y observar los productos ecológicos que posee Danone con sus respectivas características al darle click en cualquiera de ellos, además de poder buscar si sabes el nombre de alguno en especídico, y si te interesa el plan de consumo limitado de calorías podrás enviar información para que se pongan en contacto contigo.
 
-## Instalación
+## 🤔 Instalación
 
 Para el uso primero debemos instalar todas las dependencias del proyecto
 
@@ -27,7 +27,7 @@ Procedemos a correr el proyecto
 
 `npm run dev`
 
-## Stack utilizado
+## ⚡ Stack utilizado
 
 * NextJs
 * Tailwind
@@ -35,7 +35,7 @@ Procedemos a correr el proyecto
 * GraphQL
 * CRM : Hygraph
 
-## Toma de decisiones
+## 😄 Toma de decisiones
 
 Durante el desarrollo del proyecto, se tomaron las siguientes decisiones:
 
