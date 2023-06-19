@@ -1,34 +1,47 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# Danone Hackathon
 
-First, run the development server:
+## Background del proyecto
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+El proyecto tiene como objetivo principal adaptar un aplicativo web para mostrar a los usuarios los productos más ecológicos que ofrece Danone. Además, se brinda un formulario de contacto para que los usuarios interesados puedan comunicarse de inmediato. El proyecto se centra en promover la adopción de un plan de consumo limitado de calorías para mejorar la salud de los usuarios.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Uso
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Para la utilización del aplicativo no será necesario logearse,  podrás recorrer la página y observar los productos ecológicos que posee Danone además de poder buscar si sabes el nombre de alguno, y si te interesa el plan de consumo limitado de calorías podrás enviar información para que se pongan en contacto contigo.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Instalación
 
-## Learn More
+Para el uso primero debemos instalar todas las dependencias del proyecto
 
-To learn more about Next.js, take a look at the following resources:
+`npm install`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Copiamos la carpeta .env.example
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+`cp .env .env.example`
 
-## Deploy on Vercel
+Dentro de nuestro .env agregamos la siguiente variable de entrono
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+`HYGRAPH_API_URL=https://api-us-west-2.hygraph.com/v2/clj05fduv11a801umbzz3epri/master`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Procedemos a correr el proyecto
+
+`npm run dev`
+
+## Stack utilizado
+
+* NextJs
+* Tailwind
+* TypeScript
+* GraphQL
+* CRM : Hygraph
+
+## Toma de decisiones
+
+Durante el desarrollo del proyecto, se tomaron las siguientes decisiones:
+
+1. Arquitectura frontend: Se optó por utilizar un enfoque de arquitectura MVC para facilitar la organización y mantenimiento del código del frontend.
+2. Diseño responsivo: Se implementó un diseño responsivo para garantizar que el aplicativo web sea accesible y se adapte correctamente a diferentes dispositivos y tamaños de pantalla.
+3. Optimización de imágenes: Se aplicaron técnicas de compresión y optimización de imágenes para garantizar tiempos de carga rápidos y una experiencia de usuario fluida.
+4. Seguridad de datos: Se implementaron medidas de seguridad para proteger la información sensible de los usuarios, como el cifrado de datos y la validación de formularios.
+
+Estas decisiones se tomaron en base a consideraciones de rendimiento, usabilidad y seguridad, con el objetivo de proporcionar a los usuarios una experiencia óptima y segura al utilizar el aplicativo web.
