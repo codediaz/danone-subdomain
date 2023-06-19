@@ -1,6 +1,6 @@
 "use client";
 
-import { CardProduct, CustomFilter, Hero, SearchBar } from '@/components'
+import { CardProduct, ClientNecesity, CustomFilter, Hero, SearchBar } from '@/components'
 import Image from 'next/image'
 import { useEffect, useState } from 'react';
 import { request, gql } from 'graphql-request';
@@ -101,6 +101,9 @@ export default function Home({ searchParams }: HomeProps) {
           <h2 className='text-black font-bold text-xl'>Oops, no results</h2>
         </div>
       )}
+     </div>
+     <div>
+      <ClientNecesity/>
      </div>
     </main>
   )
