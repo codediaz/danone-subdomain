@@ -7,10 +7,30 @@ import Image from "next/image";
 import { Dialog, Transition } from "@headlessui/react";
 import React from 'react'
 
+interface Product {
+  title: string;
+  tags: string[];
+  availableIn: string;
+  energyValue: string;
+  fats: string;
+  carbohydrates: string;
+  description: string;
+  ingredients: string;
+  coverImage: {
+    url: string;
+  };
+  productData: string;
+  ean: string;
+  price: string;
+  nutriScore: {
+    url: string;
+  };
+}
+
 interface ProductDetailsProps {
     isOpen: boolean;
     closeModal:() => void;
-    product: ProductProps
+    product: Product
 }
 
 const ProductDetail = ({ isOpen, closeModal, product }: ProductDetailsProps) => (

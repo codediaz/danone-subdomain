@@ -8,8 +8,30 @@ import { HomeProps } from '@/Types';
 
 
 export default function Home({ searchParams }: HomeProps) {
-  const [products, setProducts] = useState([]);
-  const [filteredProducts, setFilteredProducts] = useState([]);
+  const HYGRAPH_API_URL:string = 'https://api-us-west-2.hygraph.com/v2/clj05fduv11a801umbzz3epri/master'
+  const [products, setProducts] = useState<Product[]>([]);
+const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
+
+  interface Product {
+    title: string;
+    tags: string[];
+    availableIn: string;
+    energyValue: string;
+    fats: string;
+    carbohydrates: string;
+    description: string;
+    ingredients: string;
+    coverImage: {
+      url: string;
+    };
+    productData: string;
+    ean: string;
+    price: string;
+    nutriScore: {
+      url: string;
+    };
+  }
+  
 
   useEffect(() => {
     fetchData();
@@ -41,7 +63,7 @@ export default function Home({ searchParams }: HomeProps) {
     `;
 
     try {
-      const data = await request(process.env.HYGRAPH_API_URL, query);
+      const data: { products: Product[] } = await request(HYGRAPH_API_URL, query);
       setProducts(data.products);
       setFilteredProducts(data.products); 
 
@@ -55,7 +77,7 @@ export default function Home({ searchParams }: HomeProps) {
   filteredProducts.length < 1 ||
   !filteredProducts;
 
-  const handleSearch = (searchQuery) => {
+  const handleSearch = (searchQuery : string) => {
     if (searchQuery === null) {
       setFilteredProducts(products);
       window.history.replaceState({}, document.title, window.location.pathname);

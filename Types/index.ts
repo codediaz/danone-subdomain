@@ -37,7 +37,7 @@ export interface OptionProps {
 
 export interface ProductProps {
     title : string;
-    tags?: string;
+    tags?: string[];
     availableIn?: string;
     energyValue ?: string;
     fats ?: string;

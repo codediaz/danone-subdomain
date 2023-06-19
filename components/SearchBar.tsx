@@ -4,7 +4,7 @@ import { SearchMenufacture } from "./";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-const SearchBar = ({ onSearch }) => {
+const SearchBar = ({ onSearch }: { onSearch: (searchQuery: string) => void }) => {
   const SearchButton = ({ otherClasses }: { otherClasses: string }) => (
     <button type='submit' className={`-ml-3 z-10 ${otherClasses}`}>
       <Image
@@ -54,7 +54,12 @@ const SearchBar = ({ onSearch }) => {
     const searchQuery = `${manufacturer} ${model}`;
     const trimmedSearchQuery = searchQuery ? searchQuery.trim() : '';
 
-    onSearch(trimmedSearchQuery === '' ? null : trimmedSearchQuery);
+    if (trimmedSearchQuery === null) {
+      onSearch('');
+    } else {
+      onSearch(trimmedSearchQuery);
+    }
+
   };
 
   return (

@@ -6,8 +6,29 @@ import {useState} from 'react'
 import CustomButton from './CustomButton';
 import ProductDetail from './ProductDetail';
 
+interface Product {
+  title: string;
+  tags: string[];
+  availableIn: string;
+  energyValue: string;
+  fats: string;
+  carbohydrates: string;
+  description: string;
+  ingredients: string;
+  coverImage: {
+    url: string;
+  };
+  productData: string;
+  ean: string;
+  price: string;
+  nutriScore: {
+    url: string;
+  };
+}
+
+
 interface ProductCardProps{
-    product: ProductProps;
+    product: Product;
 }
 
 const CardProduct = ({product} : ProductCardProps) => {
@@ -27,7 +48,7 @@ const CardProduct = ({product} : ProductCardProps) => {
             productData,
             ean,
             price,
-            nutriScore} = product
+            nutriScore} = product || {}
     return (
     <div className='product-card group'>
         <div className='product-card__content'>
@@ -36,12 +57,15 @@ const CardProduct = ({product} : ProductCardProps) => {
             </h2>
         </div>
         <div className='relative w-full h-40 my-3 object-contain '>
-            <Image
-                alt= {title}               
-                src={coverImage.url}
-                fill
-                priority
-                className='object-contain'/>
+        {coverImage && coverImage.url && (
+          <Image
+            alt={title}
+            src={coverImage.url}
+            fill
+            priority
+            className='object-contain'
+          />
+        )}
         </div>
 
         <div className='relative flex w-full mt-2'>
